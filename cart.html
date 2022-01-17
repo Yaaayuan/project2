@@ -15,15 +15,19 @@
             padding: 20px;
         }
         .cart_list{
+            max-width: 1200px;
             width: 100%;
-            margin: 010px;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: auto;
         }
         .cart_list_txt{
             width: 100%;
-            /* margin: auto; */
             display: flex;
             padding: 10px 0;
             box-sizing: border-box;       
+            /* background-color: yellow;  */
+            justify-content: space-between;    
         }
         .wrap{
             width: 100%;
@@ -33,6 +37,7 @@
         .product_pic{
             width: 15%;
             box-sizing: border-box;
+            background-color: burlywood;
         }
         .product_pic img{
             width: 100%;
@@ -41,12 +46,15 @@
         .product_name{
             width: 30%;
             margin: 0 10px;
+            /* background-color: aquamarine; */
         }
         .product_amount{
+            display: flex;
             width: 32%;
             padding:0  10px;
             box-sizing: border-box;
             height: 32px;
+            /* background-color: chartreuse; */
         }
         .amount_btn{
             text-align: center;
@@ -62,15 +70,13 @@
             width: 80px;
         }
         .price {
-            width: 5%;
-            font-size: 24px;
-            font-weight: 700;
-            color: #B87A3D;
-            padding:0 10px;
+            font-size: 20px;
+            font-weight: 500;
+            padding:0 10px 0 0;
         }
         .close_icon{
             width: 15px;
-            padding:0 0 0 20px;
+            text-align: right;
         }
         .close_icon img{
             width: 100%;
@@ -80,10 +86,10 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-            padding:20px 0;
+            padding:10px 0;
         }
         .next_icon{
-            width: 15px;
+            width: 12px;
         }
         .next_icon img{
             width: 100%;
@@ -119,7 +125,6 @@
             color: #ffffff;
             border:2px solid #B87A3D;
         }
-
         /* 格線 */
         hr{
             margin: 10px 0;
@@ -142,7 +147,7 @@
                 <a href="about_us.html">會員註冊/登入</a>
             </nav>
             <div class="logo">
-                <img src="pic/logo_name_official.png" alt="logo">
+                <a href="index.html"><img src="pic/logo_name_official.png" alt="logo"></a>
             </div>
             <div class="search_cart">
                 <img src="pic/search_left.png" alt="search" id="search">
@@ -157,9 +162,11 @@
         <div class="path">
             <ol class="breadcrumb">
                 <li><a href="##">首頁</a></li>
-                <li><a href="##">一點甜商店</a></li>
+                <li><a href="##">購物車</a></li>
             </ol>
-        </div> 
+        </div>
+    </div>
+ 
     <h1>購物車明細</h1>
     <div class="wrap">
             <div class="cart_list">
@@ -194,7 +201,7 @@
                         <button class="amount_btn">-</button><input type="text" class="amount_txt" placeholder="1"><button class="amount_btn">+</button>
                     </div>
                     <div class="price">
-                        <p>$90</p>
+                        <p>$120</p>
                     </div>
                     <div class="close_icon">
                         <img src="pic/black_close.png" alt="">
@@ -255,7 +262,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
     
     <!-- footer -->
@@ -282,7 +288,5 @@
             <p>Copyright © 2021 (非營利，僅供學術交流使用) All Rights Reserved</p>
         </div>
     </div>
-    
-    
 </body>
 </html>
