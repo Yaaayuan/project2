@@ -11,11 +11,9 @@
     <link rel="shortcut icon" href="pic/logo_official.ico" type="image/x-icon" />     
     <style>
         .banner{
-            width: 100%px;
-            height: 280px;
+            width: 100%;
             overflow: hidden;
-            margin: 20px 0;
-
+            margin: 20px 0 0;
         }
         .banner img{
             width: 100%;
@@ -23,26 +21,29 @@
         }
         .article_container{
             width: 100%;
+            padding: 10px;
         }
         .title{
             text-align: center;
         }
         .title p{
             margin: auto;
+            padding-top: 10px;
             text-align: right;
         }
         .article_content{
-            line-height: 2.5;
-            padding: 20px 40px;
+            line-height: 2;
+            padding: 20px;
             letter-spacing: 0.1em;
             border: #B87A3D 1px solid;
-            box-shadow: 5px 5px 3px 1px #ccc;
+            box-shadow: 2px 2px 2px 1px #ccc;
         }
         /* 延伸閱讀 */
         .another_article_container{
-            width: 30%;
+            width: 100%;
             padding-top: 100px;
-            padding-left: 20px;
+            padding: 10px;
+            box-sizing: border-box;
         }
         .another_article_head{
             display: flex;
@@ -56,14 +57,21 @@
         }
         .another_article_content{
             display: flex;
-            justify-content: space-between;
             margin: 10px 0;
         }
+        .another_article_pic{
+            width: 20%;
+        }
         .another_article_pic img{
+            width: 100%;
             vertical-align: middle;
         }
         .another_article_txt{
+            width: 100%;
             padding-left: 10px;
+        }
+        .another_article_txt :first-child{
+            font-weight: 700;
         }
         /* 格線 */
         hr{
@@ -99,6 +107,7 @@
             box-shadow: 5px 5px 3px 1px #ccc;
         }
         /* 延伸閱讀 */
+
         .another_article_container{
             width: 30%;
             padding-top: 100px;
@@ -188,36 +197,44 @@
                 </p>
             </div>
             </div>
-            <div class="col-12 col-md-6 another_article_container">
+            <div class="another_article_container">
                 <div class="another_article_head">
-                    <p>延伸閱讀</p>
+                    <h1>延伸閱讀</h1>
                     <a href="###">more</a>
                 </div>
                 <div class="another_article">
                     <div class="another_article_content">
-                        <div class="article_pic">
+                        <div class="another_article_pic">
                             <img src="https://picsum.photos/80/80/?random=4">
                         </div>
                         <div class="another_article_txt">
-                            編輯對於本月，上升保存最初或許日誌供求這一臨床協議這個傢俱初音正常可愛
+                            <p>
+                                編輯對於本月
+                            </p>
+                            <p>上升保存最初或許日誌供求這一臨床協議這個傢俱初音正常可愛</p>
                         </div>
                            
                     </div>
                     <div class="another_article_content">
-                        <div class="article_pic">
+                        <div class="another_article_pic">
                             <img src="https://picsum.photos/80/80/?random=3">
                         </div>
                         <div class="another_article_txt">
-                            編輯對於本月，上升保存最初或許日誌供求這一臨床協議這個傢俱初音正常可愛
+                            <p>
+                                編輯對於本月
+                            </p>
+                            <p>上升保存最初或許日誌供求這一臨床協議這個傢俱初音正常可愛</p>
                         </div>
-
                     </div>
                     <div class="another_article_content">
                         <div class="another_article_pic">
                             <img src="https://picsum.photos/80/80/?random=2">
                         </div>
                         <div class="another_article_txt">
-                            編輯對於本月，上升保存最初或許日誌供求這一臨床協議這個傢俱初音正常可愛
+                            <p>
+                                編輯對於本月
+                            </p>
+                            <p>上升保存最初或許日誌供求這一臨床協議這個傢俱初音正常可愛</p>
                         </div>
 
                     </div>

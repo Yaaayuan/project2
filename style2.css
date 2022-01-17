@@ -113,7 +113,7 @@ a{
 }
 
 #menu-check:checked ~ .header .header_container .main-nav{
-    left: 10px;
+    left: 0px;
     opacity: 1;
     transition: opacity 1s;
 }

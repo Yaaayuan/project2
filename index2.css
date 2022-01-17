@@ -53,6 +53,7 @@ h2{
     width: 30px;
     height: 30px;
     position: relative;
+    margin: 0 10px;
     /* background-color: salmon; */
 }
 .hb:before,.hb:after{
@@ -250,9 +251,11 @@ h2{
 }
 /* banner */
 .banner{
+    max-width: 1200px;
     width: 100%;
-    height: 200px;
-    margin-bottom: 40px;
+    min-height: 200px;
+    height: 60%;
+    margin-bottom: 0 auto 40px;
     box-sizing: border-box;
     display: inline-block;
     overflow: hidden;
@@ -260,6 +263,67 @@ h2{
 .banner_img img{
     width: 100%;
 }
+.swiper_container{
+    max-width: 1200px;
+    position: relative;
+    /* padding: 0 10px; */
+    margin: 0 auto 50px;
+
+}
+.swiper-button-next,.swiper-button-prev{
+    background-color: #b87b3d96;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    border-radius: 50%;
+    --swiper-navigation-size: 15px;
+    margin: 0 10px;
+}
+.swiper-button-next{
+    position: absolute;
+    right: 0;
+
+
+}
+.swiper-button-prev{
+    position: absolute;
+    left: 0;
+}
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    /* margin-right: 20px; */
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+.swiper-pagination{
+    top: 100%;
+    --swiper-theme-color: #b87b3d;
+}
+
 /* 精選特輯 */
 h1{
     text-align: center;
@@ -332,13 +396,13 @@ h1{
 }
 /* dm */
 .dm{
-    height: 80px;
+    width: 100%;
     overflow: hidden;
     margin-bottom: 40px;
     text-align: center;
 }
 .dm img{
-    height: 100%;
+    width: 100%;
 }
 /* 熱銷商品/最新商品 */
 .hot_product ,.new_product{
@@ -414,7 +478,8 @@ h1{
 }
 .article_pic{
     width: 150px;
-    height: 150px;
+    height:160px;
+    vertical-align: middle;
 
 }
 .article_pic img{
@@ -437,6 +502,7 @@ h1{
 }
 .more_tag{
     text-align: right;
+    font-size: 12px;
 }
 a{
     text-decoration: none;
@@ -596,16 +662,60 @@ a{
     }
     /* banner */
     .banner{
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
+        height: 70%;
+        max-height: 500px;
         margin: 0 auto 60px;
         text-align: center;
     }
-    .banner_img{
-        max-width: 1200px;
-        display: inline-block;
+    .swiper_container{
+        margin: 0 auto 60px;
     }
+    .swiper-button-next,.swiper-button-prev{
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        --swiper-navigation-size: 20px;
+    }
+    .swiper-button-next{
+        position: absolute;
+        right: 20px;
+    }
+    .swiper-button-prev{
+        position: absolute;
+        left: 20px;
+    }
+    .swiper-slide {
+        text-align: center;
+        /* width: 50%; */
+        /* width: 312.995px; */
+        /* margin-right: 20px; */
+        /*background: #fff; */
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        /* height: 100%; */
+        object-fit: cover;
+    }
+    .swiper-pagination{
+        top: 90%;
+        --swiper-theme-color: #b87b3d;
+        }
     /* 精選特輯 */
     .special_issue{
         width: 100%;

@@ -23,19 +23,27 @@
         }
         .cart_list_txt{
             width: 100%;
-            display: flex;
             padding: 10px 0;
             box-sizing: border-box;       
             /* background-color: yellow;  */
-            justify-content: space-between;    
+            position: relative;
+    
         }
         .wrap{
             width: 100%;
             box-sizing: border-box;
             position: relative;
         }
+        .product_main_txt_box{
+            width: 100%;
+            display: flex;
+            padding: 10px 0;
+            box-sizing: border-box;       
+            position: relative;
+            /* background-color: yellow;  */
+        }
         .product_pic{
-            width: 15%;
+            width: 25%;
             box-sizing: border-box;
             background-color: burlywood;
         }
@@ -43,15 +51,22 @@
             width: 100%;
             vertical-align: middle;
         }
+
         .product_name{
-            width: 30%;
+            width: 100%;
             margin: 0 10px;
             /* background-color: aquamarine; */
         }
+        .product_txt_box{
+            width: 100%;
+            display: flex;
+            padding: 10px 0;
+            box-sizing: border-box; 
+            justify-content: space-between;      
+        }
         .product_amount{
             display: flex;
-            width: 32%;
-            padding:0  10px;
+            width: 50%;
             box-sizing: border-box;
             height: 32px;
             /* background-color: chartreuse; */
@@ -61,22 +76,30 @@
             font-size: 20px;
             width:30px;
             height:100%;
-            color: #B87A3D;
+            color: #555;
             vertical-align: top;
+            border:1px solid #555;
+            padding:0 10px ;
+            border-radius: 4px;
         }
         .amount_txt{
             height: 90%;
             text-align: center;
-            width: 80px;
+            width: 100%;
+            margin: 0 5px;
         }
         .price {
             font-size: 20px;
             font-weight: 500;
-            padding:0 10px 0 0;
+            padding:0 10px;
+            text-align: center;
         }
         .close_icon{
+            position: absolute;
             width: 15px;
             text-align: right;
+            top: 0;
+            right: 0;
         }
         .close_icon img{
             width: 100%;
@@ -129,6 +152,17 @@
         hr{
             margin: 10px 0;
         }
+        @media screen and (min-width:992px) {
+            .cart_list_txt{
+                display: flex;
+            }
+            .product_txt_box{
+                justify-content: start;
+            }
+            .price{
+                margin: 0 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -171,37 +205,22 @@
     <div class="wrap">
             <div class="cart_list">
                 <div class="cart_list_txt">
-                    <div class="product_pic">
-                        <img src="pic/檸檬奶霜可麗露.png" alt="">
+                    <div class="product_main_txt_box">
+                        <div class="product_pic">
+                            <img src="pic/檸檬奶霜可麗露.png" alt="">
+                        </div>
+                        <div class="product_name">
+                            <h2>檸檬奶霜可麗露</h2>
+                            <p>貳玖甜室</p>
+                        </div>
                     </div>
-                    <div class="product_name">
-                        <h2>檸檬奶霜可麗露</h2>
-                        <p>貳玖甜室</p>
-                    </div>
-                    <div class="product_amount">
-                        <button class="amount_btn">-</button><input type="text" class="amount_txt" placeholder="1"><button class="amount_btn">+</button>
-                    </div>
-                    <div class="price">
-                        <p>$100</p>
-                    </div>
-                    <div class="close_icon">
-                        <img src="pic/black_close.png" alt="">
-                    </div>
-                </div>
-                <hr>
-                <div class="cart_list_txt">
-                    <div class="product_pic">
-                        <img src="pic/鹹蛋黃可麗露.PNG">
-                    </div>
-                    <div class="product_name">
-                        <h2>鹹蛋黃可麗露</h2>
-                        <p>貳玖甜室</p>
-                    </div>
-                    <div class="product_amount">
-                        <button class="amount_btn">-</button><input type="text" class="amount_txt" placeholder="1"><button class="amount_btn">+</button>
-                    </div>
-                    <div class="price">
-                        <p>$120</p>
+                    <div class="product_txt_box">
+                        <div class="product_amount">
+                            <button class="amount_btn">-</button><input type="text" class="amount_txt" placeholder="1"><button class="amount_btn">+</button>
+                        </div>
+                        <div class="price">
+                            <p>$100</p>
+                        </div>
                     </div>
                     <div class="close_icon">
                         <img src="pic/black_close.png" alt="">
@@ -209,18 +228,45 @@
                 </div>
                 <hr>
                 <div class="cart_list_txt">
-                    <div class="product_pic">
-                        <img src="pic/hot_product/hot3.png">
+                    <div class="product_main_txt_box">
+                        <div class="product_pic">
+                            <img src="pic/鹹蛋黃可麗露.PNG" alt="">
+                        </div>
+                        <div class="product_name">
+                            <h2>鹹蛋黃可麗露</h2>
+                            <p>貳玖甜室</p>
+                        </div>
                     </div>
-                    <div class="product_name">
-                        <h2>鮮草莓生乳達克瓦茲</h2>
-                        <p>一些甜點</p>
+                    <div class="product_txt_box">
+                        <div class="product_amount">
+                            <button class="amount_btn">-</button><input type="text" class="amount_txt" placeholder="1"><button class="amount_btn">+</button>
+                        </div>
+                        <div class="price">
+                            <p>$120</p>
+                        </div>
                     </div>
-                    <div class="product_amount">
-                        <button class="amount_btn">-</button><input type="text" class="amount_txt" placeholder="1"><button class="amount_btn">+</button>
+                    <div class="close_icon">
+                        <img src="pic/black_close.png" alt="">
                     </div>
-                    <div class="price">
-                        <p>$150</p>
+                </div>
+                <hr>
+                <div class="cart_list_txt">
+                    <div class="product_main_txt_box">
+                        <div class="product_pic">
+                            <img src="pic/hot_product/hot3.png" alt="">
+                        </div>
+                        <div class="product_name">
+                            <h2>鮮草莓生乳達克瓦茲</h2>
+                            <p>一些甜點</p>
+                        </div>
+                    </div>
+                    <div class="product_txt_box">
+                        <div class="product_amount">
+                            <button class="amount_btn">-</button><input type="text" class="amount_txt" placeholder="1"><button class="amount_btn">+</button>
+                        </div>
+                        <div class="price">
+                            <p>$150</p>
+                        </div>
                     </div>
                     <div class="close_icon">
                         <img src="pic/black_close.png" alt="">
@@ -250,7 +296,7 @@
                         <h2>訂單總額(含運)</h2>
                     </div>
                     <div class="total_price">
-                        <p>$340</p>
+                        <p>$370</p>
                     </div>
                 </div>
                 <div class="btn_group">
