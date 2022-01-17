@@ -4,161 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一點甜 About us</title>
+    <title>一點甜_購物車</title>
     <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="pic/logo_official.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="pic/logo_official.ico" type="image/x-icon" />   
     <style>
-        /* header */
-        body{
-            color:#555;
-        }
-        .header{   
-            width: 100%;
-            height:65px; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            left: 0;
-            background-color: #ffffff;
-            z-index: 100;   
-        }
-    
-        .menubox{
-            width: 50px;
-            height: 50px;
-            display: inline-block; 
-        }
-        .menu{
-            width:30px;
-            height: 6px;
-            background-color: #B87A3D;
-            box-shadow: 0px 11px 0px 0px #B87A3D,
-            0px -11px 0px 0px #B87A3D;
-            margin-top: 25px; 
-        }
-        /* menu下拉選單*/
-        ul { /* 取消ul預設的內縮及樣式 */
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        ul.drop-down-menu {
-            display: inline-block;
-            font-family: 'Open Sans', Arial, sans-serif;
-        }
-        ul.drop-down-menu li {
-            position: relative;
-            white-space: nowrap;
-        }
-        ul.drop-down-menu > li:last-child {
-            border-right: none;
-        }
-        ul.drop-down-menu > li {
-            float: left; /* 只有第一層是靠左對齊*/
-        }
-
-        ul.drop-down-menu a {
-            background-color: #fff;
-            color: #333;
-            display: block;
-            padding-left: 20px;
-            text-decoration: none;
-            line-height: 40px;
-        }
-        ul.drop-down-menu a:hover { /* 滑鼠滑入按鈕變色*/
-            background-color: #eee;
-            color: #fff;
-        }
-        ul.drop-down-menu li:hover > a { /* 滑鼠移入次選單上層按鈕保持變色*/
-            background-color: #eee;
-            color: #B87A3D;
-            font-weight: bolder;
-        }
-        ul.drop-down-menu ul { /*隱藏次選單*/
-            display: none;
-        }
-
-        ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
-            display: block;
-        }
-        ul.drop-down-menu ul {
-            border: 1px solid #eee;
-            position: absolute;
-            z-index: 99;
-            left: -1px;
-            top: 100%;
-            min-width: 180px;
-        }
-        .logo{
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 41%;
-        }
-        .logo img{
-            height: 100%;  
-            /* padding-left: 90px; */
-            padding: 5px 0 5px 0px ;
-            box-sizing: border-box;
-        }
-        .search_cart{
-            height: 100%;
-            display: flex;    
-            align-items: center;
-            /* position: fixed; */
-        }
-        .search_cart a img{
-            height: 100%;
-            box-sizing: border-box;
-        }
-        .search_cart a{
-            height: 50%;
-        }
-        #search{
-            height: 40%;
-            padding: 0 20px;
-        }
-        /* font */
-        body{
-            color:#555;
-            line-height: 1.5;
-        }
-        h1{
-            text-align: center;
-            padding-top: 20px;
-            font-size: 28px;
-        }
-        h2{
-            font-size:20px;
-        } 
-        /* body */
-        .path{
-            padding: 20px;
-        }
         h1{
             text-align: center;
             padding: 20px;
-            font-size: 28px;
         }
         .cart_list{
-            width: 80%;
-            margin: auto;
+            width: 100%;
+            margin: 010px;
         }
         .cart_list_txt{
             width: 100%;
             /* margin: auto; */
             display: flex;
-            justify-content: space-between;
             padding: 10px 0;
-            box-sizing: border-box;            
+            box-sizing: border-box;       
+            background-color: yellow;     
         }
         .wrap{
+            width: 100%;
+            box-sizing: border-box;
             position: relative;
         }
         .product_pic{
             width: 15%;
             box-sizing: border-box;
+            background-color: burlywood;
         }
         .product_pic img{
             width: 100%;
@@ -167,18 +43,19 @@
         .product_name{
             width: 30%;
             margin: 0 10px;
+            background-color: aquamarine;
         }
         .product_amount{
-            width: 30%;
+            width: 32%;
             padding:0  10px;
             box-sizing: border-box;
             height: 32px;
+            background-color: chartreuse;
         }
         .amount_btn{
             text-align: center;
             font-size: 20px;
-            width: 
-            30px;
+            width:30px;
             height:100%;
             color: #B87A3D;
             vertical-align: top;
@@ -186,12 +63,14 @@
         .amount_txt{
             height: 90%;
             text-align: center;
-            width: 120px;
+            width: 80px;
         }
         .price {
+            width: 5%;
             font-size: 24px;
             font-weight: 700;
-            color: #B87A3D;padding:0 10px;
+            color: #B87A3D;
+            padding:0 10px;
         }
         .close_icon{
             width: 15px;
@@ -202,6 +81,7 @@
             vertical-align: middle;
         }
         .box{
+            width: 100%;
             display: flex;
             justify-content: space-between;
             padding:20px 0;
@@ -248,77 +128,42 @@
         hr{
             margin: 10px 0;
         }
-        /* footer */
-        .footer{
-            padding: 20px;
-            text-align: center;
-            width: 100%;
-            background-color: #ecd1b6;
-            box-sizing: border-box;
-
-        }
-        .socialmedia_wrap{
-            display: flex;
-            margin: 10px 0;
-            justify-content: center;
-        }
-        .socialmedia_col{
-            width: 50px;
-            padding:0 20px;
-        }
-        .socialmedia_col img{
-            width: 100%;
-            box-sizing: border-box;
-            border-radius: 300px;
-        }
-        .shortcut-text a{
-            color: #000000;
-        }
-        .shortcut-text{
-            margin:20px 0;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-    <!--head-->
+    <div class="container"> 
+        <!-- header -->
+        <input type="checkbox" id="menu-check">
         <div class="header">
-            <ul class="drop-down-menu">
-                <li>
-                    <a href="###">
-                        <div class="menubox"><div class="menu"></div></div>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="index.html">首頁</a>
-                        </li>
-                        <li>
-                            <a href="all_product.html">一點甜商店</a>
-                        </li>
-                        <li>
-                            <a href="member.html">會員中心</a>
-                        </li>
-                        <li>
-                            <a href="article_all.html">一點甜專欄</a>
-                        </li>
-                        <li>
-                            <a href="about_us.html">關於我們</a>
-                        </li>
-                    </ul>
-                </li>  
-            </ul>
-            <a href="index.html">
-                <div class="logo"><img src="pic/logo_name_official.png" alt="logo"></div>
-            </a>
+        <div class="header_container col-12">
+            <label for="menu-check" class="hb"></label>
+            <nav class="main-nav">
+                <a href="index.html">首頁</a>
+                <a href="all_product.html">一點甜商店</a>
+                <a href="member.html">會員中心</a>
+                <a href="article_all.html">一點甜專欄</a>
+                <a href="about_us.html">關於我們</a>
+                <a href="about_us.html">會員註冊/登入</a>
+            </nav>
+            <div class="logo">
+                <img src="pic/logo_name_official.png" alt="logo">
+            </div>
             <div class="search_cart">
-                 <img src="pic/search_left.png" alt="search" id="search">
-                 <a href="cart.html">
-                     <img src="pic/shopping-cart.png" alt="shopping-cart" href="cart.html">
-                 </a>
+                <img src="pic/search_left.png" alt="search" id="search">
+                <a href="cart.html">
+                    <img src="pic/shopping-cart.png" alt="shopping-cart" href="cart.html" id="cart">
+                </a>
             </div>
         </div>
-    <!-- body -->
-    <div class="path"><p>首頁/購物車</p></div>
+        </div>        
+        <!-- main -->
+        <!-- 麵包屑 -->
+        <div class="path">
+            <ol class="breadcrumb">
+                <li><a href="##">首頁</a></li>
+                <li><a href="##">一點甜商店</a></li>
+            </ol>
+        </div> 
     <h1>購物車明細</h1>
     <div class="wrap">
             <div class="cart_list">
