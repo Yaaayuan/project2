@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一點甜</title>   
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="pic/logo_official.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="pic/logo_official.ico" type="image/x-icon" /> 
+    <link
+    rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <style>
+        /* 精選專欄 */
+        .title{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .hot_article_wrap{
+            position: relative;
+        }
+        .hot_article_txt{
+            position: absolute;
+            bottom:0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.438);
+            color: #fff;
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .swiper_container{
+            /* margin: 0 30px; */
+            position: relative;
+            padding: 0 20px;
+            margin-bottom: 50px;
+        }
+        .swiper-button-next,.swiper-button-prev{
+            background-color: #b87b3d96;
+            padding: 5px;
+            width: 25px;
+            height: 25px;
+            color: #ffffff;
+            border-radius: 50%;
+            --swiper-navigation-size: 15px;
+        }
+        .swiper-button-next{
+            position: absolute;
+            left: 100%px;
+
+        }
+        .swiper {
+            width: 100%;
+            /* height: 100%; */
+            /* margin: 0 50px; */
+            /* box-sizing: border-box; */
+        }
+        .swiper-slide {
+            text-align: center;
+            width: 100%;
+            /* width: 312.995px; */
+            /* margin-right: 20px; */
+            /*background: #fff; */
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            /* height: 100%; */
+            object-fit: cover;
+        }
+        .swiper-pagination{
+            top: 100%;
+            --swiper-theme-color: #b87b3d;
+        }
+        /* 文章清單 */
+        .article_container{
+            width: 100%;
+            margin:auto;
+            box-sizing: border-box;
+        }
+        .article_box{
+            display: flex;
+            width: 90%;
+            height: 130px;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            background-color: #eee;
+            box-sizing: border-box;
+        }
+        .article_pic{
+            height: 100%;
+        }
+        .article_pic img{
+            height: 100%;
+            vertical-align: middle;
+        }
+        .article_txt_box{
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        .article_txt{
+            width: 100%;
+            padding:10px 20px;
+            box-sizing: border-box;
+        }
+        .article_txt p+p{
+            display: none;
+        }
+        .readmore{
+            text-align: right;
+            padding: px;
+        }
+        .readmore a{
+            color: #555;
+        }
+
+        @media screen and (min-width:992px) {
+        /* 精選專欄 */
+        .title{
+            margin-bottom: 30px;
+        }
+        .hot_article_wrap{
+            margin: 15px;
+        } 
+        .swiper_container{
+            max-width: 1200px;
+            margin: 0 40px;
+            position: relative;
+            padding: 0 20px;
+            margin-bottom: 50px;
+            /* background-color: aqua; */
+        }
+        .swiper-button-next,.swiper-button-prev{
+            background-color: #b87b3dde;
+            padding: 5px;
+            width: 30px;
+            height: 30px;
+            color: #ffffff;
+            border-radius: 50%;
+            --swiper-navigation-size: 20px;
+        }
+        .swiper-button-next{
+            position: absolute;
+            left: 98.5%;
+        }
+        .swiper-button-prev{
+            position: absolute;
+            left: -3%;
+        }
+        .swiper {
+            width: 100%;
+            /* height: 100%; */
+            box-sizing: border-box; 
+        }
+
+        .swiper-slide {
+            text-align: center;
+            /* width: 50%; */
+            /* width: 312.995px; */
+            /* margin-right: 20px; */
+            /*background: #fff; */
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            /* height: 100%; */
+            object-fit: cover;
+        }
+        .swiper-pagination{
+            top: 100%;
+            --swiper-theme-color: #b87b3d;
+        }
+        /* 文章清單 */
+        .article_container{
+            max-width: 1200px;
+            padding: 20px;
+        }
+        .article_box{
+            display: flex;
+            width: 90%;
+            height: 250px;
+            overflow: hidden;
+            margin: 0 auto 40px;
+            background-color: #eee;
+            box-sizing: border-box;
+        }
+        .article_pic{
+            width: 30%;
+        }
+        .article_pic img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .article_txt p+p{
+            display: block;
+        }
+    }                  
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <input type="checkbox" id="menu-check">
+        <div class="header">
+        <div class="header_container col-12">
+            <label for="menu-check" class="hb"></label>
+            <nav class="main-nav">
+                <a href="index.html">首頁</a>
+                <a href="all_product.html">一點甜商店</a>
+                <a href="member.html">會員中心</a>
+                <a href="article.html">一點甜專欄</a>
+                <a href="about_us.html">關於我們</a>
+                <a href="about_us.html">會員註冊/登入</a>
+            </nav>
+            <div class="logo">
+                <img src="pic/logo_name_official.png" alt="logo">
+            </div>
+            <div class="search_cart">
+                <img src="pic/search_left.png" alt="search" id="search">
+                <a href="cart.html">
+                    <img src="pic/shopping-cart.png" alt="shopping-cart" href="cart.html" id="cart">
+                </a>
+            </div>
+        </div>
+        </div>     
+        <!-- main -->
+        <!-- 麵包屑 -->
+        <div class="path">
+            <ol class="breadcrumb">
+                <li><a href="##">首頁</a></li>
+                <li><a href="##">一點甜專欄</a></li>
+            </ol>
+        </div>
+        <!-- 精選專欄 -->
+        <h1 class="title">一點甜專欄</h1>
+            <div class="swiper_container">
+                <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="hot_article_wrap">
+                            <div class="hot_article_pic">
+                                <img src="pic/hot_article.jpg">
+                            </div>
+                            <div class="hot_article_txt">
+                                <h2>淺談法國甜點文化</h2>
+                                <p>淺談法國甜點文化淺談法國甜點文化淺談法國甜點文化淺談法國甜點文化淺談法國甜點文化淺談法國甜。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hot_article_wrap">
+                            <div class="hot_article_pic">
+                                <img src="pic/hot_article2.jpg">
+                            </div>
+                            <div class="hot_article_txt">
+                                <h2>淺談日式甜點文化</h2>
+                                <p>日式甜點結果也想讓也也想讓也隱也想讓也也想讓也想讓也也藏也也想讓也也想讓也想也想讓也也想讓她。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hot_article_wrap">
+                            <div class="hot_article_pic">
+                                <img src="pic/hot_article3.jpg">
+                            </div>
+                            <div class="hot_article_txt">
+                                <h2>淺談中式甜點文化</h2>
+                                <p>結果隱藏也想讓也想讓也也想讓也也想讓也也想讓也也想讓也也想讓也也想讓也她誘也想讓也也想讓也也想保</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>          
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>          
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="article_container">
+                <div class="article_box">
+                    <div class="article_pic">
+                        <img src="pic/article1.jpg" alt="">
+                    </div>
+                    <div class="article_txt_box">
+                        <div class="article_txt">
+                            <h2>讓人想一秒飛巴黎的法式十大經典甜點</h2>
+                            <p>成功祝福趕緊倒是久造型英語，問內地的確石虎。</p>
+                            <p>成功祝福趕緊倒是另一個，上去說是安裝發生醫生也是地圖很久造型英語，語言提問內地的確告，保育福趕緊倒是另一個，上去說是安裝發生醫生也是地圖很久造石虎。</p>
+                        </div>
+                        <div class="readmore"><a href="###">read more...</a></div>
+                    </div>
+                </div>
+                <div class="article_box">
+                    <div class="article_pic">
+                        <img src="pic/hot_article4.jpg" alt="">
+                    </div>
+                    <div class="article_txt_box">
+                        <div class="article_txt">
+                            <h2>檸檬塔種類及派系認識</h2>
+                            <p>成功祝福趕緊倒生久造型英語，語內地的確告，保育石虎。</p>
+                            <p>成功祝福趕緊倒是另一個，上去說是安裝發生醫生福趕緊倒是另一個，上去說是安裝發生醫生也是地圖很久造圖很久造型英語，語言提問內地的確告，保育石虎。</p>
+                        </div>
+                        <div class="readmore"><a href="###">read more...</a></div>
+                    </div>
+
+                </div>
+                <div class="article_box">
+                    <div class="article_pic">
+                        <img src="pic/hot_article5.jpg" alt="">
+                    </div>
+                    <div class="article_txt_box">
+                        <div class="article_txt">
+                            <h2>乳酪塔種類及派系認識</h2>
+                            <p>成功祝福趕緊倒是另一個，上去說是安裝發生久造型英提問虎。</p>
+                            <p>成功祝福趕緊倒是另一個，上去說是安裝發生醫生也是地福趕緊倒是另一個，上去說是安裝發生醫生也是地圖很久造圖很久造型英語，語言提問內地的確告，保育石虎。</p>
+                        </div>
+                        <div class="readmore"><a href="###">read more...</a></div>
+                    </div>
+                </div>
+                <div class="article_box">
+                    <div class="article_pic">
+                        <img src="pic/hot_article3.jpg" alt="">
+                    </div>     
+                    <div class="article_txt_box">
+                        <div class="article_txt">
+                            <h2>法式甜點文化認識</h2>
+                            <p>成功祝福趕緊倒是另一個，上去說是安裝發生久造型英語，語虎。</p>
+                            <p>成功祝福趕緊倒是另一個，上去說是安裝發生醫生也是福趕緊倒是另一個，上去說是安裝發生醫生也是地圖很久造地圖很久造型英語，語言提問內地的確告，保育石虎。</p>
+                        </div>
+                        <div class="readmore"><a href="###">read more...</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swiper JS -->
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                window.onload=function(){
+                    //判斷螢幕寬度
+                    var winWide = window.innerWidth;  //獲取當前螢幕解析度
+                    // alert(winWide);
+                    var wideScreen = false;
+                    if(winWide >= 992){  
+                        var swiper = new Swiper(".mySwiper", {
+                            slidesPerView: 3,
+                            spaceBetween: 3,
+                            slidesPerGroup: 3,
+                            loop: true,
+                            loopFillGroupWithBlank: true,
+                            pagination: {
+                            el: ".swiper-pagination",
+                            clickable: true,
+                            },
+                            navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                            },
+                        });
+                    }
+                    else{  
+                        var swiper = new Swiper(".mySwiper", {
+                                    slidesPerView: 1,
+                                    spaceBetween: 3,
+                                    slidesPerGroup: 1,
+                                    loop: true,
+                                    loopFillGroupWithBlank: true,
+                                    pagination: {
+                                    el: ".swiper-pagination",
+                                    clickable: true,
+                                    },
+                                    navigation: {
+                                    nextEl: ".swiper-button-next",
+                                    prevEl: ".swiper-button-prev",
+                                    },
+                                });
+                    }
+                }
+                window.onresize=function(){
+                    //判斷螢幕寬度
+                    var winWide = window.innerWidth;  //獲取當前螢幕解析度
+                    // alert(winWide);
+                    var wideScreen = false;
+                    if(winWide >= 992){  
+                        var swiper = new Swiper(".mySwiper", {
+                            slidesPerView: 3,
+                            spaceBetween: 3,
+                            slidesPerGroup: 3,
+                            loop: true,
+                            loopFillGroupWithBlank: true,
+                            pagination: {
+                            el: ".swiper-pagination",
+                            clickable: true,
+                            },
+                            navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                            },
+                        });
+                    }
+                    else{  
+                        var swiper = new Swiper(".mySwiper", {
+                                    slidesPerView: 1,
+                                    spaceBetween: 3,
+                                    slidesPerGroup: 1,
+                                    loop: true,
+                                    loopFillGroupWithBlank: true,
+                                    pagination: {
+                                    el: ".swiper-pagination",
+                                    clickable: true,
+                                    },
+                                    navigation: {
+                                    nextEl: ".swiper-button-next",
+                                    prevEl: ".swiper-button-prev",
+                                    },
+                                });
+                    }
+                }
+            </script>    
+            </div>    
+    <div class="footer">
+        <div class="socialmedia_wrap">
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/facebook.png" alt="facebook"></a>
+            </div>
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/instagram.png" alt="ig"></a>
+            </div>
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/line.png" alt="line"></a>
+            </div>
+        </div>
+        <div class="shortcut-text">
+            <a href="##">關於我們</a>｜
+            <a href="##">常見問題</a>｜
+            <a href="##">購物說明</a>｜
+            <a href="##">聯繫我們</a>
+        </div>
+        <div class="copy-right">
+            <span>食品業者登錄字號：A-11212560-00123-1</span>
+            <p>Copyright © 2021 (非營利，僅供學術交流使用) All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>

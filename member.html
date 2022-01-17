@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一點甜_會員中心</title>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="pic/logo_official.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="pic/logo_official.ico" type="image/x-icon" /> 
+    <style>
+        .main_container h1{
+            text-align: center;
+        }
+        .common_row{
+            width: 100%;
+            margin: auto;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .member_row{
+            display: flex;
+            justify-content: flex-start;
+            position: relative;
+        }  
+        .member_formlist{
+            padding:5px 10px;
+            background-color:#e0a86b;
+            color: #ffffff;
+            font-weight: bolder;
+            text-align: center;
+            border-radius:8px 8px 0 0;
+            box-sizing: border-box;
+            margin: 20px 10px 0 0;
+            box-shadow: 3px -3px 2px 0 #ddd,
+                        3px -1px 2px 0 #ddd,
+                        3px 0px 2px 0 #ddd ;
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 30px;
+        }       
+        
+        .member_form_txt{
+            border: 2px solid #B87A3D;
+            padding: 10px 10px;
+            line-height: 1.5;
+            margin-bottom: 50px;
+            background-color:#ffffff;
+            box-shadow: 4px 4px 2px 0 #ddd;
+            padding: 30px 0;
+            box-sizing: border-box;
+        }
+        /* 基本資料 */
+        .member_form_txt form{
+            text-align: left;
+        }
+        .member_wrap{
+            padding: 20px;
+            width: 90%;
+            margin: auto;
+            display: flex;
+            box-sizing: border-box;
+            justify-content: flex-start;
+
+        }
+        .member_icon{
+            width: 200px;
+            margin: auto;
+        }
+        .member_icon img{
+            width: 100%;
+        }
+        .member_wrap label{
+            width: 100px;
+        }
+        .gender_item{
+            margin:0 5px ;
+        }
+        .like_item{
+            margin:0 5px ;
+        }
+        .txt_area{
+            flex-grow: 1;
+            background-color: #eee;
+            display: inline-block;
+            border: 1px  solid #aaa;
+            border-radius: 2px;
+        }
+        .btn_group{
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn{
+            padding: 3px 6px;
+            border-radius: 2px;
+            margin: 0 10px;
+            border: 1px solid #B87A3D;
+        }
+        #reset_btn{
+            color: #B87A3D;
+            font-weight: bolder;
+        }
+        #submit_btn{
+            background-color: #B87A3D;
+            color: #ffffff;
+        }
+        /* 訂單紀錄 */
+        table,td,th{
+            border: 1px solid #555;
+            border-collapse:collapse;
+            padding: 5px 8px;
+            text-align: center;
+        }
+        table{
+            margin: auto;
+            width: 90%;
+        }
+        .order_record_content,
+        .basic_data_form,
+        .like_list_content{
+            display: none;
+        }
+        #order_record:checked ~ * .order_record,
+        #basic_data:checked ~ * .basic_data,
+        #like_list:checked ~ * .like_list
+        {
+            background-color: #B87A3D;
+            box-shadow: 5px 1px 2px 0 #ddd;
+        }
+        #basic_data:checked ~ * .basic_data_form,
+        #order_record:checked ~ * .order_record_content,
+        #like_list:checked ~ * .like_list_content
+        {
+            display: block;
+        }        
+        /* 追蹤清單 */
+        .imgbox{
+            width: 100px;
+            margin: auto;
+        }
+        .imgbox img{
+            width: 100%;
+        }
+
+        /* radio */
+        .radiobtn{
+            display: none;
+        }
+        @media screen and (min-width:992px) {
+            .common_row{
+                max-width: 1200px;
+            }
+            .member_formlist{
+                padding:10px 40px;
+                border-radius:10px 10px 0 0;
+                margin: 20px 40px 0 0;
+                height: 50px;
+                font-size: 18px;
+            }
+            .basic_data:hover,
+            .like_list:hover,
+            .order_record:hover{
+                background-color: #B87A3D;
+                box-shadow: 5px 1px 2px 0 #ddd;
+                position: relative;
+            }
+            /* 基本資料 */
+            .member_wrap{
+                width: 70%;               
+            }
+            input[type="checkbox"],
+            input[type="radio"]{
+                margin: .2em;;
+            }
+            .gender_item{
+                margin:0 10px ;
+            }
+            .like_item{
+                margin:0 10px ;
+            }
+            .like_item_group{
+                width: 80%;
+                display: flex;
+            }
+            .txt_area{
+                border-radius: 5px;
+            }
+            .btn{
+                padding: 4px 8px;
+                font-size: 16px;                
+            }
+            /* 追蹤清單 */
+            .imgbox{
+                width: 200px;
+                margin: auto;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <input type="checkbox" id="menu-check">
+        <div class="header">
+        <div class="header_container col-12">
+            <label for="menu-check" class="hb"></label>
+            <nav class="main-nav">
+                <a href="index.html">首頁</a>
+                <a href="all_product.html">一點甜商店</a>
+                <a href="member.html">會員中心</a>
+                <a href="article.html">一點甜專欄</a>
+                <a href="about_us.html">關於我們</a>
+                <a href="about_us.html">會員註冊/登入</a>
+            </nav>
+            <div class="logo">
+                <img src="pic/logo_name_official.png" alt="logo">
+            </div>
+            <div class="search_cart">
+                <img src="pic/search_left.png" alt="search" id="search">
+                <a href="cart.html">
+                    <img src="pic/shopping-cart.png" alt="shopping-cart" href="cart.html" id="cart">
+                </a>
+            </div>
+        </div>
+        </div>        
+        <!-- main -->
+        <!-- 麵包屑 -->
+        <div class="path">
+            <ol class="breadcrumb">
+                <li><a href="##">首頁</a></li>
+                <li><a href="##">會員中心</a></li>
+            </ol>
+        </div> 
+    </div>
+        <!-- main -->
+        <input type="radio" id="basic_data" class="radiobtn" name="tab" checked="checked">
+        <input type="radio" id="order_record" class="radiobtn" name="tab">
+        <input type="radio" id="like_list" class="radiobtn" name="tab">
+        <div class="main_container">
+            <h1>會員中心</h1>
+            <div class="member_row common_row">
+                <label class="member_formlist basic_data" for="basic_data">基本資料</label>
+                <label class="member_formlist order_record" for="order_record">訂單紀錄</label>
+                <label class="member_formlist like_list" for="like_list">追蹤清單</label>
+            </div>
+            <div class="common_row">
+                <div class="member_form_txt">
+                    <!-- 基本資料 -->
+                    <form class="basic_data_form">
+                        <div class="member_icon">
+                            <img src="pic/user.png" alt="">
+                        </div>
+                        <div class="member_wrap">
+                            <label for="member_name">姓名：</label>
+                            <input class="txt_area" type="text" name="member_name" id="member_name">
+                        </div>
+                        <div class="member_wrap">
+                            <label for="member_tel">手機號碼：</label>
+                            <input class="txt_area" type="tel" name="member_tel" id="member_tel" maxlength="10">
+                        </div>
+            
+                        <div class="member_wrap">
+                            <label for="member_addr">地址：</label>
+                            <input class="txt_area" type="text" name="member_addr" id="member_addr">
+                        </div>
+            
+                        <div class="member_wrap">
+                            <label for="member_email">電子郵件：</label>
+                            <input class="txt_area" type="email" name="member_email" id="member_email">
+                        </div>
+            
+                        <div class="member_wrap">
+                            <label for="member_gender">性別：</label>
+                            <div class="gender_item">
+                                <input type="radio" name="gender" id="gender" value="female">女
+                            </div>
+                            <div class="gender_item">
+                                <input type="radio" name="gender" id="gender" value="male">男
+                            </div>
+                        </div>
+                        <div class="member_wrap ">
+                            <label for="like_items">喜歡的甜點：</label>
+                            <div class="like_item_group">
+                                <div class="like_item">
+                                    <input type="checkbox" name="like_item" id="like_item">達克瓦茲
+                                </div>
+                                <div class="like_item">
+                                    <input type="checkbox" name="like_item" id="like_item">馬卡龍
+                                </div>
+                                <div class="like_item">
+                                    <input type="checkbox" name="like_item" id="like_item">派塔
+                                </div>
+                                <div class="like_item">
+                                    <input type="checkbox" name="like_item" id="like_item">蛋糕
+                                </div>
+                                <div class="like_item">
+                                    <input type="checkbox" name="like_item" id="like_item">可麗露
+                                </div>
+                                <div class="like_item">
+                                    <input type="checkbox" name="like_item" id="like_item">餅乾
+                                </div>
+                                <div class="like_item">
+                                    <input type="checkbox" name="like_item" id="like_item">其他
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_group">
+                            <input class="btn" id="reset_btn" type="reset" value="取消">
+                            <input class="btn" id="submit_btn" type="submit" value="更新">
+                        </div>
+                    </form>
+                    <!-- 訂單紀錄 -->
+                    <div class="order_record_content">
+                        <div class="record_item">
+                            <table>  
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>訂單日期</th>
+                                        <th>狀態</th>
+                                        <th>購買項目</th>
+                                        <th>金額</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="2">                            <input type="checkbox" name="###" id="###">
+                                        </td>
+                                        <td rowspan="2">2019/11/12</td>
+                                        <td rowspan="2">已完成</td>
+                                        <td>大溪地香草可麗露</td>
+                                        <td>$140</td>
+                                    </tr>
+                                    <tr>
+                                        <td>鹹蛋黃可麗露</td>
+                                        <td>$210</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">                            <input type="checkbox" name="###" id="###">
+                                        </td>
+                                        <td rowspan="2">2019/10/10</td>
+                                        <td rowspan="2">已完成</td>
+                                        <td>焦糖開心果達克瓦茲</td>
+                                        <td>$180</td>
+                                    </tr>
+                                    <tr>
+                                        <td>玫瑰荔枝馬可龍</td>
+                                        <td>$300</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn_group">
+                                <input class="btn" id="reset_btn" type="reset" value="取消">
+                                <input class="btn" id="submit_btn" type="submit" value="檢視">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 追蹤清單 -->
+                    <div class="like_list_content">
+                        <div class="like_list_item">
+                            <table>  
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>NO.</th>
+                                        <th>產品</th>
+                                        <th>產品名稱</th>
+                                        <th>金額</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>                            <input type="checkbox" name="###" id="###">
+                                        </td>
+                                        <td>1</td>
+                                        <td>
+                                            <div class="imgbox">
+                                                <img src="pic/hot_product/hot2.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>抹茶栗子磅蛋糕</td>
+                                        <td>$200</td>
+                                    </tr>
+                                    <tr>
+                                        <td>                            <input type="checkbox" name="###" id="###">
+                                        </td>
+                                        <td>2</td>
+                                        <td class="pic_td">
+                                            <div class="imgbox">
+                                                <img src="pic/hot_product/hot3.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>玫瑰荔枝達克瓦茲</td>
+                                        <td>$100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn_group">
+                                <input class="btn" id="reset_btn" type="reset" value="取消">
+                                <input class="btn" id="submit_btn" type="submit" value="加入購物車">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+                </div>
+        </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="socialmedia_wrap">
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/facebook.png" alt="facebook"></a>
+            </div>
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/instagram.png" alt="ig"></a>
+            </div>
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/line.png" alt="line"></a>
+            </div>
+        </div>
+        <div class="shortcut-text">
+            <a href="##">關於我們</a>｜
+            <a href="##">常見問題</a>｜
+            <a href="##">購物說明</a>｜
+            <a href="##">聯繫我們</a>
+        </div>
+        <div class="copy-right">
+            <span>食品業者登錄字號：A-11212560-00123-1</span>
+            <p>Copyright © 2021 (非營利，僅供學術交流使用) All Rights Reserved</p>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

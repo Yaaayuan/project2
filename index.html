@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一點甜</title>
+    <link rel="stylesheet" href="index2.css">
+    <link rel="stylesheet" href="grid.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="pic/logo_official.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="pic/logo_official.ico" type="image/x-icon" /> 
+</head>
+<body>
+    <!-- header -->
+     <input type="checkbox" id="menu-check">
+     <div class="header">
+         <div class="header_container col-12">
+         
+            <label for="menu-check" class="hb"></label>
+            <nav class="main-nav">
+                <a href="index.html">首頁</a>
+                <a href="all_product.html">一點甜商店</a>
+                <a href="member.html">會員中心</a>
+                <a href="article.html">一點甜專欄</a>
+                <a href="about_us.html">關於我們</a>
+                <a href="about_us.html">會員註冊/登入</a>
+            </nav>
+            <div class="logo">
+                <img src="pic/logo_name_official.png" alt="logo">
+            </div>
+            <div class="login_cart">
+                <button class="login_btn">登入/註冊</button>
+                <a href="cart.html">
+                    <img src="pic/shopping-cart.png" alt="shopping-cart" href="cart.html">
+                </a>
+            </div>
+             </div>
+     </div>
+    <!-- main -->
+    <!-- product nav -->
+    <div class="product_nav_container">
+        <div class="shiftPanel">
+            <button class="btn" id="btnLeft" disabled><</button>
+        </div>
+            <div class="itemView">
+            <div class="wrap">
+                <a href="all_product.html">
+                    <div class="product_item">
+                        <div class="product_icon">
+                            <img src="pic/product_icon/caliiu.svg" alt="calilu">
+                        </div>
+                        <p class="product_text">
+                            可麗露
+                        </p>
+                    </div>
+                </a>
+                <a href="###">
+                    <div class="product_item">
+                        <div class="product_icon">
+                            <img src="pic/product_icon/dakewazi.svg" alt="dakewazi">
+                        </div>
+                        <p class="product_text">
+                            達克瓦茲
+                        </p>
+                    </div>
+                </a>
+                <a href="###">
+                    <div class="product_item">
+                        <div class="product_icon">
+                            <img src="pic/product_icon/macaroon.png" alt="macaroon">
+                        </div>
+                        <p class="product_text">
+                            馬卡龍
+                        </p>
+                    </div>
+                </a>
+                <a href="###">
+                    <div class="product_item">
+                        <div class="product_icon">
+                            <img src="pic/product_icon/pei.svg" alt="pei">
+                        </div>
+                        <p class="product_text">
+                            派塔
+                        </p>
+                    </div>
+                </a>
+                <a href="###">
+                    <div class="product_item">
+                        <div class="product_icon">
+                            <img src="pic/product_icon/cake.png" alt="cake">
+                        </div>
+                        <p class="product_text">
+                            蛋糕
+                        </p>
+                    </div>
+                </a>
+                <a href="###">
+                    <div class="product_item">
+                        <div class="product_icon">
+                            <img src="pic/product_icon/cookie.png" alt="cookie">
+                        </div>
+                        <p class="product_text">
+                            餅乾
+                        </p>
+                    </div>
+                </a>
+                <a href="###">
+                    <div class="product_item">
+                        <div class="product_icon">
+                            <img src="pic/product_icon/else.png" alt="else">
+                        </div>
+                        <p class="product_text">
+                            其他
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="shiftPanel">
+            <button class="btn" id="btnRight">></button>
+        </div>
+    </div>
+    <script type="text/javascript" src="slider.js"></script>    
+    <!-- search bar -->
+    <div class="search_row">
+        <input class="search_bar " type="text" name="search" id="search" placeholder="想找些什麼甜點?">
+        <button class="search_btn">搜尋</button>
+    </div>
+    <!-- banner -->
+    <div class="banner">
+        <div class="banner_img">
+            <img src="pic/2banner.png">
+        </div>
+
+    </div>
+    <!-- 精選特輯 -->
+    <h1>精選特輯</h1>
+        <div class="special_issue">
+            <div class="issue_wrap">
+                <div class="issue_box">
+                    <div class="issue_pic">
+                        <img src="pic/gift.jpg">
+                    </div>
+                    <div class="issue_txt">
+                        <h2>禮盒特輯</h2>
+                        <p>過年過節想不吃要送什麼嗎?選一點甜準沒錯!多種豐富禮盒任君挑選!</p>
+                    </div>
+                </div>
+                <div class="issue_box">
+                    <div class="issue_pic">
+                        <img src="pic/office.jpg">
+                    </div>
+                    <div class="issue_txt">
+                        <h2>加班小確幸特輯</h2>
+                        <p>加班小點心，讓一點甜陪你在衝一波業績!</p>
+                    </div>
+                </div>
+                <div class="issue_box">
+                    <div class="issue_pic">
+                        <img src="pic/birthday.jpg">
+                    </div>
+                    <div class="issue_txt">
+                        <h2>生日蛋糕特輯</h2>
+                        <p>貼心宅配到府，無論是幫自己慶祝或給朋友驚喜，給你難忘的生日回憶!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--合作夥伴-->
+    <h1>合作夥伴</h1>
+        <div class="partner">
+            <div class="partner_wrap">
+                <div class="partner_logo">
+                    <img src="pic/貳玖甜室.jpg">
+                </div>
+                <p>貳玖甜室</p>
+            </div>
+            <div class="partner_wrap">
+                <div class="partner_logo">
+                    <img src="pic/一些甜點.jpg">
+                </div>
+                <p>一些甜點</p>
+            </div>
+            <div class="partner_wrap">
+                <div class="partner_logo border">
+                    <img src="pic/暖暖.jpg">
+                </div>
+                <p>暖暖</p>
+            </div>
+            <div class="partner_wrap">
+                <div class="partner_logo">
+                    <img src="pic/風雨咖啡.jpg">
+                </div>
+                <p>風雨珈琲</p>
+            </div>
+            <div class="partner_wrap">
+                <div class="partner_logo">
+                    <img src="pic/餅不甜.jpg">
+                </div>
+                <p>餅不甜</p>
+            </div>
+            <div class="partner_wrap">
+                <div class="partner_logo border">
+                    <img src="pic/二月森.jpg">
+                </div>
+                <p>二月森</p>
+            </div>
+            <div class="partner_wrap">
+                <div class="partner_logo">
+                    <img src="pic/希賽斯.jpg">
+                </div>
+                <p>希賽斯</p>
+            </div>  
+        </div>
+    <!-- dm -->
+    <div class="dm">
+        <img src="pic/dm.png">
+    </div>
+    <!-- 熱門商品 -->
+    <h1>熱門商品</h1>
+    
+        <div class="hot_product">
+            <div class="hot_product_wrap">
+                <div class="product_pic">
+                    <img src="pic/hot_product/hot1.png">
+                </div>
+                <h2>太妃焦糖可麗露</h2>
+                <div class="store">
+                    <div class="store_icon">
+                        <img src="pic/shop_b.png" alt="">
+                    </div>
+                    <div class="store_name">
+                        <a href="###">貳玖甜室</a>
+                    </div>
+                </div>
+                <div class="price_follow_box">
+                    <div class="price">
+                        <span>$90</span>
+                    </div>
+                    <div class="follow">
+                        <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot_product_wrap">
+                <div class="product_pic">
+                    <img src="pic/hot_product/hot2.png">
+                </div>
+                <h2>栗子抹茶白巧磅蛋糕</h2>
+                <div class="store">
+                    <div class="store_icon">
+                        <img src="pic/shop_b.png" alt="">
+                    </div>
+                    <div class="store_name">
+                        <a href="###">一些甜點</a>
+                    </div>
+                </div>
+                <div class="price_follow_box">
+                    <div class="price">
+                        <span>$120</span>
+                    </div>
+                    <div class="follow">
+                        <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot_product_wrap">
+                <div class="product_pic">
+                    <img src="pic/hot_product/hot3.png">
+                </div>
+                <h2>鮮草莓生乳達克瓦茲</h2>
+                <div class="store">
+                    <div class="store_icon">
+                        <img src="pic/shop_b.png" alt="">
+                    </div>
+                    <div class="store_name">
+                        <a href="###">一些甜點</a>
+                    </div>
+                </div>
+                <div class="price_follow_box">
+                    <div class="price">
+                        <span>$150</span>
+                    </div>
+                    <div class="follow">
+                        <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot_product_wrap">
+                <div class="product_pic">
+                    <img src="pic/hot_product/hot4.png">
+                </div>
+                <h2>紅絲絨馬卡龍</h2>
+                <div class="store">
+                    <div class="store_icon">
+                        <img src="pic/shop_b.png" alt="">
+                    </div>
+                    <div class="store_name">
+                        <a href="###">一些甜點</a>
+                    </div>
+                </div>
+                <div class="price_follow_box">
+                    <div class="price">
+                        <span>$150</span>
+                    </div>
+                    <div class="follow">
+                        <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot_product_wrap">
+                <div class="product_pic">
+                    <img src="pic/hot_product/hot5.png">
+                </div>
+                <h2>糖漬橙片利口酒糖霜磅蛋糕</h2>
+                <div class="store">
+                    <div class="store_icon">
+                        <img src="pic/shop_b.png" alt="">
+                    </div>
+                    <div class="store_name">
+                        <a href="###">一些甜點</a>
+                    </div>
+                </div>
+                <div class="price_follow_box">
+                    <div class="price">
+                        <span>$150</span>
+                    </div>
+                    <div class="follow">
+                        <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot_product_wrap">
+                <div class="product_pic">
+                    <img src="pic/hot_product/hot6.png">
+                </div>
+                <h2>玫瑰荔枝覆盆子馬卡龍</h2>
+                <div class="store">
+                    <div class="store_icon">
+                        <img src="pic/shop_b.png" alt="">
+                    </div>
+                    <div class="store_name">
+                        <a href="###">一些甜點</a>
+                    </div>
+                </div>
+                <div class="price_follow_box">
+                    <div class="price">
+                        <span>$120</span>
+                    </div>
+                    <div class="follow">
+                        <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot_product_wrap">
+                <div class="product_pic">
+                    <img src="pic/hot_product/hot7.png">
+                </div>
+                <h2>鮮草莓生乳奶油餅乾</h2>
+                <div class="store">
+                    <div class="store_icon">
+                        <img src="pic/shop_b.png" alt="">
+                    </div>
+                    <div class="store_name">
+                        <a href="###">貳玖甜室</a>
+                    </div>
+                </div>
+                <div class="price_follow_box">
+                    <div class="price">
+                        <span>$100</span>
+                    </div>
+                    <div class="follow">
+                        <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hot_product_wrap">
+                <div class="product_pic">
+                    <img src="pic/hot_product/hot8.png">
+                </div>
+                <h2>深焙摩卡軟餅乾</h2>
+                <div class="store">
+                    <div class="store_icon">
+                        <img src="pic/shop_b.png" alt="">
+                    </div>
+                    <div class="store_name">
+                        <a href="###">希賽斯手感糖食</a>
+                    </div>
+                </div>
+                <div class="price_follow_box">
+                    <div class="price">
+                        <span>$150</span>
+                    </div>
+                    <div class="follow">
+                        <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- 最新商品 -->
+    <h1>最新商品</h1>
+    <div class="new_product">
+        <div class="new_product_wrap">
+            <div class="product_pic">
+                <img src="pic/new_product/new1.jpg">
+            </div>
+            <h2>檸檬奶霜可麗露</h2>
+            <div class="store">
+                <div class="store_icon">
+                    <img src="pic/shop_b.png" alt="">
+                </div>
+                <div class="store_name">
+                    <a href="###">貳玖甜室</a>
+                </div>
+            </div>
+            <div class="price_follow_box">
+                <div class="price">
+                    <span>$120</span>
+                </div>
+                <div class="follow">
+                    <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="new_product_wrap">
+            <div class="product_pic">
+                <img src="pic/new_product/new2.png">
+            </div>
+            <h2>小山園抹茶達克瓦茲</h2>
+            <div class="store">
+                <div class="store_icon">
+                    <img src="pic/shop_b.png" alt="">
+                </div>
+                <div class="store_name">
+                    <a href="###">暖暖</a>
+                </div>
+            </div>
+            <div class="price_follow_box">
+                <div class="price">
+                    <span>$120</span>
+                </div>
+                <div class="follow">
+                    <a href="##"><img src="pic/brown_heartldpi.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="new_product_wrap">
+            <div class="product_pic">
+                <img src="pic/new_product/new3.jpg">
+            </div>
+            <h2>肉桂蘋果可麗露</h2>
+            <div class="store">
+                <div class="store_icon">
+                    <img src="pic/shop_b.png" alt="">
+                </div>
+                <div class="store_name">
+                    <a href="###">餅不甜</a>
+                </div>
+            </div>
+            <div class="price_follow_box">
+                <div class="price">
+                    <span>$100</span>
+                </div>
+                <div class="follow">
+                    <a href="##"><img src="pic/brown_heartldpi.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="new_product_wrap">
+            <div class="product_pic">
+                <img src="pic/new_product/new4.jpg">
+            </div>
+            <h2>中深焙咖啡巴斯克</h2>
+            <div class="store">
+                <div class="store_icon">
+                    <img src="pic/shop_b.png" alt="">
+                </div>
+                <div class="store_name">
+                    <a href="###">餅不甜</a>
+                </div>
+            </div>
+            <div class="price_follow_box">
+                <div class="price">
+                    <span>$680</span>
+                </div>
+                <div class="follow">
+                    <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>一點甜專欄</h1>
+    <div class="article">
+        <div class="article_wrap">
+            <div class="article_pic">
+                <img src="pic/article_pic1.jpg">
+            </div>
+            <div class="article_txt">
+                <div class="article_content">
+                    <h2>為何法國人餐後一定要吃甜點?</h2>
+                    <p>法國人的每一餐，無論男女老少，即便再簡單，都一定有一道甜食...</p>
+                </div>
+                <div class="more_tag">
+                    <a href="##">more</a>
+                </div>
+            </div>  
+        </div>
+        <div class="article_wrap">
+            <div class="article_pic">
+                <img src="pic/article_pic2.jpg">
+            </div>
+            <div class="article_txt">
+                <div class="article_content">
+                    <h2>讓人想一秒飛巴黎的法式十大經典甜點</h2>
+                    <p>「法國甜點」歷史從中世紀簡樸的糕點開始，到19世紀受到皇室貴族的喜愛...</p>
+                </div>
+                <div class="more_tag">
+                    <a href="##">more</a>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="socialmedia_wrap">
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/facebook.png" alt="facebook"></a>
+            </div>
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/instagram.png" alt="ig"></a>
+            </div>
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/line.png" alt="line"></a>
+            </div>
+        </div>
+        <div class="shortcut-text">
+            <a href="##">關於我們</a>｜
+            <a href="##">常見問題</a>｜
+            <a href="##">購物說明</a>｜
+            <a href="##">聯繫我們</a>
+        </div>
+        <div class="copy-right">
+            <span>食品業者登錄字號：A-11212560-00123-1</span>
+            <p>Copyright © 2021 (此網站為虛構，僅供學術交流使用，若有侵權問題，請聯繫Tibame修正) All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一點甜</title>
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="pic/logo_official.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="pic/logo_official.ico" type="image/x-icon" /> 
+    <style>
+        /* 產品分類 */
+        .product_nav_container{
+            width: 320px;
+            display: flex;
+            margin: 0 auto 35px ;
+            /* background-color:darkgoldenrod ; */
+        }
+        .shiftPanel{
+            text-align: center;
+            width: 15PX;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .shiftPanel > .btn{
+            font-weight: bold;
+            border-style: none;
+            background-color: #b87b3dc7;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            padding: 0;
+            line-height: 1;
+        }
+        .itemView{
+            position:relative;
+            width: 500px;
+            height:75px;
+            margin: auto;
+            overflow:hidden;
+            /* background-color: darkorange; */
+        }
+        .wrap{
+            position:absolute;
+            top:0px;
+            left:0px;
+            width: 100%;
+            transition:left 1s;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .product_item{
+            margin:7px;
+            width: 44px;
+            text-align: center;
+        }
+        .product_icon{
+            width: 44x;
+            height: 44px;
+            margin: 0 auto 5px;
+        }
+        .product_icon img{
+            width: 100%;
+            vertical-align: middle;
+            box-sizing: border-box;
+        }
+        .product_item p{
+            font-size:10px;
+            color:#B87A3D ;
+            font-weight:500;
+            line-height: 1.5; 
+        }
+        /* 類別介紹 */
+        .intro_col{
+            padding: 0 0 0 10px;
+        }
+        .category img{
+            width: 100%;
+            vertical-align: top;
+        }
+        .category{
+            width:100%;
+            box-sizing: border-box;
+        }
+        .category_txt{
+            padding:0 10px;
+            height: 100%;
+            line-height: 1.8;
+            box-sizing: border-box;
+        }
+        .category_txt h1{
+            border-bottom:2px solid #B87A3D;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #B87A3D;
+        }
+        .introduce{
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        /* 商品列 */
+        .product{
+            justify-content: flex-start;
+            margin:0 10px 40px;
+
+        }
+        .product_wrap{
+            padding:10px;
+            margin: 0 5px;
+            background-color: #eee;
+        }
+        .product_pic{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .product_pic img{
+            width: 100%;
+        }
+        .product_wrap a{
+            text-decoration: none;
+            color: #555;
+        }
+        .price_follow_box{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .price{
+            font-size: 20px;
+            font-weight: bolder;
+            color: #B87A3D;
+            padding: 10px 0 0;  
+        }
+        .follow{
+            width: 20px;    
+        }
+        .follow img{
+            width: 100%;
+        }
+        .store{
+            display: flex;
+            flex-direction: row;
+            margin: 5px 0;
+            align-items: center;
+        }
+        .store_icon{
+            width: 16px;
+            margin-right: 5px;
+            box-sizing:border-box;
+        }
+        .store_icon img{
+            width: 100%;    
+            vertical-align: middle;
+        }
+        @media screen and (min-width:992px) {
+              /* 產品分類 */
+            .product_nav_container{
+                max-width:1200px;
+                width: 80%;
+                justify-content: center;
+                margin: 50px auto;
+            }
+            .shiftPanel{
+                display: none;
+            }
+            .shiftPanel > .btn{
+                display: none;
+            }
+            .itemView{
+                width: 85%;
+                height:120px;
+                text-align: center;
+                overflow: visible;
+            }
+            .wrap{
+                justify-content: space-around;
+            }
+            .product_item{
+                width: 70px;
+                border-bottom:transparent 3px solid;
+                padding: 2px;
+            }
+            .product_item:hover{
+                border-bottom: #B87A3D 3px solid;
+            } 
+            .product_icon{
+                width: 70px;
+                height: 70px;
+                margin-bottom: 5px;
+                /* background-color:burlywood; */
+            }
+            .product_item p{
+                font-size: 16px; 
+            }
+            /* 類別介紹 */
+
+            .category img{
+                width: 100%;
+                vertical-align: top;
+            }
+            .category_txt{
+                padding:0 30px;
+                line-height: 2;
+            }
+            /* 商品列 */
+            .product{
+                margin: 0 0 50px ;
+            }
+            .product_wrap{
+                padding:15px;
+                margin:5px 10px;
+            }
+            .price{
+                font-size: 24px;
+                padding: 15px 0 0;  
+            }
+            .store_icon{
+                width: 20px;
+            }
+        }
+   </style>     
+</head>
+<body>
+    <div class="container"> 
+        <!-- header -->
+        <input type="checkbox" id="menu-check">
+        <div class="header">
+        <div class="header_container col-12">
+            <label for="menu-check" class="hb"></label>
+            <nav class="main-nav">
+                <a href="index.html">首頁</a>
+                <a href="all_product.html">一點甜商店</a>
+                <a href="member.html">會員中心</a>
+                <a href="article.html">一點甜專欄</a>
+                <a href="about_us.html">關於我們</a>
+                <a href="about_us.html">會員註冊/登入</a>
+            </nav>
+            <div class="logo">
+                <img src="pic/logo_name_official.png" alt="logo">
+            </div>
+            <div class="search_cart">
+                <img src="pic/search_left.png" alt="search" id="search">
+                <a href="cart.html">
+                    <img src="pic/shopping-cart.png" alt="shopping-cart" href="cart.html" id="cart">
+                </a>
+            </div>
+        </div>
+        </div>        
+        <!-- main -->
+        <!-- 麵包屑 -->
+        <div class="path">
+            <ol class="breadcrumb">
+                <li><a href="##">首頁</a></li>
+                <li><a href="##">一點甜商店</a></li>
+            </ol>
+        </div> 
+        <!-- 產品分類 -->
+        <div class="product_nav_container">
+            <div class="shiftPanel">
+                <button class="btn" id="btnLeft" disabled><</button>
+            </div>
+            <div class="itemView">
+                <div class="wrap">
+                    <a href="all_product.html">
+                        <div class="product_item">
+                            <div class="product_icon">
+                                <img src="pic/product_icon/caliiu.svg" alt="calilu">
+                            </div>
+                            <p class="product_text">
+                                可麗露
+                            </p>
+                        </div>
+                    </a>
+                    <a href="###">
+                        <div class="product_item">
+                            <div class="product_icon">
+                                <img src="pic/product_icon/dakewazi.svg" alt="dakewazi">
+                            </div>
+                            <p class="product_text">
+                                達克瓦茲
+                            </p>
+                        </div>
+                    </a>
+                    <a href="###">
+                        <div class="product_item">
+                            <div class="product_icon">
+                                <img src="pic/product_icon/macaroon.png" alt="macaroon">
+                            </div>
+                            <p class="product_text">
+                                馬卡龍
+                            </p>
+                        </div>
+                    </a>
+                    <a href="###">
+                        <div class="product_item">
+                            <div class="product_icon">
+                                <img src="pic/product_icon/pei.svg" alt="pei">
+                            </div>
+                            <p class="product_text">
+                                派塔
+                            </p>
+                        </div>
+                    </a>
+                    <a href="###">
+                        <div class="product_item">
+                            <div class="product_icon">
+                                <img src="pic/product_icon/cake.png" alt="cake">
+                            </div>
+                            <p class="product_text">
+                                蛋糕
+                            </p>
+                        </div>
+                    </a>
+                    <a href="###">
+                        <div class="product_item">
+                            <div class="product_icon">
+                                <img src="pic/product_icon/cookie.png" alt="cookie">
+                            </div>
+                            <p class="product_text">
+                                餅乾
+                            </p>
+                        </div>
+                    </a>
+                    <a href="###">
+                        <div class="product_item">
+                            <div class="product_icon">
+                                <img src="pic/product_icon/else.png" alt="else">
+                            </div>
+                            <p class="product_text">
+                                其他
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="shiftPanel">
+                <button class="btn" id="btnRight">></button>
+            </div>
+        </div>
+        <script type="text/javascript" src="slider.js"></script>    
+<!-- 產品介紹 -->
+        <div class="row introduce">
+            <div class="col-12 col-md-6 intro_col">
+                <div class="category">
+                    <img src="pic/carona_all.jpg">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 intro_col_txt">
+                <div class="category_txt">
+                    <h1>可麗露</h1>
+                    <p>
+                        可麗露又稱可露麗，在台灣又有天使之鈴的美名， 是一種小型的法式甜點，表層則是硬脆又厚實的褐色焦糖外殼，內部是半融化狀的蛋糕糊，散發著酒香和香草味。這種法國甜點外形小巧，約呈2英吋高、在表面有凹凸楞狀的圓柱體，像極了一個小鈴鐺，是法國西南部波爾多地區的特產，但也常常可以在巴黎糕點店(pâtisseries)找到。製作上用到雞蛋、牛奶與麵粉，會加上蘭姆酒與香草調味。糊狀的軟凍在模子裡烘培，使得可麗露有著焦糖外殼與鬆軟多孔的內裡。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row product">
+            <div class="col-6 col-md-3">
+                <div class="product_wrap">
+                    <div class="product_pic">
+                        <img src="pic/hot_product/hot1.png">
+                    </div>
+                    <a href="product.html">
+                        <h2>太妃焦糖可麗露</h2>
+                    </a>
+                    <div class="store">
+                        <div class="store_icon">
+                            <img src="pic/shop_b.png" alt="">
+                        </div>
+                        <div class="store_name">
+                            <a href="###">貳玖甜室</a>
+                        </div>
+                    </div>
+                    <div class="price_follow_box">
+                        <div class="price">
+                            <span>$90</span>
+                        </div>
+                        <div class="follow">
+                            <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product_wrap">
+                    <div class="product_pic">
+                        <img src="pic/canneles.jpg">
+                    </div>
+                    <h2>大溪地香草可麗露</h2>
+                    <div class="store">
+                        <div class="store_icon">
+                            <img src="pic/shop_b.png" alt="">
+                        </div>
+                        <div class="store_name">
+                            <a href="###">一點甜</a>
+                        </div>
+                    </div>
+                    <div class="price_follow_box">
+                        <div class="price">
+                            <span>$100</span>
+                        </div>
+                        <div class="follow">
+                            <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product_wrap">
+                    <div class="product_pic">
+                        <img src="pic/charlot (1).jpg">
+                    </div>
+                    <h2>巧克力堅果可麗露</h2>
+                    <div class="store">
+                        <div class="store_icon">
+                            <img src="pic/shop_b.png" alt="">
+                        </div>
+                        <div class="store_name">
+                            <a href="###">一點甜</a>
+                        </div>
+                    </div>
+                    <div class="price_follow_box">
+                        <div class="price">
+                            <span>$120</span>
+                        </div>
+                        <div class="follow">
+                            <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product_wrap">
+                    <div class="product_pic">
+                        <img src="pic/芝麻鹹蛋黃可麗露.PNG">
+                    </div>
+                    <h2>芝麻鹹蛋黃可麗露</h2>
+                    <div class="store">
+                        <div class="store_icon">
+                            <img src="pic/shop_b.png" alt="">
+                        </div>
+                        <div class="store_name">
+                            <a href="###">貳玖甜室</a>
+                        </div>
+                    </div>
+                    <div class="price_follow_box">
+                        <div class="price">
+                            <span>$90</span>
+                        </div>
+                        <div class="follow">
+                            <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product_wrap">
+                    <div class="product_pic">
+                        <img src="pic/檸檬奶霜可麗露.png">
+                    </div>
+                    <h2>檸檬奶霜可麗露</h2>
+                    <div class="store">
+                        <div class="store_icon">
+                            <img src="pic/shop_b.png" alt="">
+                        </div>
+                        <div class="store_name">
+                            <a href="###">貳玖甜室</a>
+                        </div>
+                    </div>
+                    <div class="price_follow_box">
+                        <div class="price">
+                            <span>$100</span>
+                        </div>
+                        <div class="follow">
+                            <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product_wrap">
+                    <div class="product_pic">
+                        <img src="pic/熱紅酒可麗露.PNG">
+                    </div>
+                    <h2>熱紅酒可麗露</h2>
+                    <div class="store">
+                        <div class="store_icon">
+                            <img src="pic/shop_b.png" alt="">
+                        </div>
+                        <div class="store_name">
+                            <a href="###">餅不甜</a>
+                        </div>
+                    </div>
+                    <div class="price_follow_box">
+                        <div class="price">
+                            <span>$150</span>
+                        </div>
+                        <div class="follow">
+                            <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product_wrap">
+                    <div class="product_pic">
+                        <img src="pic/Ruby香緹泡芙可麗露.PNG">
+                    </div>
+                    <h2>香緹泡芙可麗露</h2>
+                    <div class="store">
+                        <div class="store_icon">
+                            <img src="pic/shop_b.png" alt="">
+                        </div>
+                        <div class="store_name">
+                            <a href="###">餅不甜</a>
+                        </div>
+                    </div>
+                    <div class="price_follow_box">
+                        <div class="price">
+                            <span>$150</span>
+                        </div>
+                        <div class="follow">
+                            <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="product_wrap">
+                    <div class="product_pic">
+                        <img src="pic/伯爵黑糖珍珠鮮奶茶可麗露.PNG">
+                    </div>
+                    <h2>珍珠鮮奶茶可麗露</h2>
+                    <div class="store">
+                        <div class="store_icon">
+                            <img src="pic/shop_b.png" alt="">
+                        </div>
+                        <div class="store_name">
+                            <a href="###">餅不甜</a>
+                        </div>
+                    </div>
+                    <div class="price_follow_box">
+                        <div class="price">
+                            <span>$130</span>
+                        </div>
+                        <div class="follow">
+                            <a href="##"><img src="pic/heartldpi.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- footer -->
+    <div class="footer">
+        <div class="socialmedia_wrap">
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/facebook.png" alt="facebook"></a>
+            </div>
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/instagram.png" alt="ig"></a>
+            </div>
+            <div class="socialmedia_col">
+                <a href="#"><img src="pic/line.png" alt="line"></a>
+            </div>
+        </div>
+        <div class="shortcut-text">
+            <a href="##">關於我們</a>｜
+            <a href="##">常見問題</a>｜
+            <a href="##">購物說明</a>｜
+            <a href="##">聯繫我們</a>
+        </div>
+        <div class="copy-right">
+            <span>食品業者登錄字號：A-11212560-00123-1</span>
+            <p>Copyright © 2021 (非營利，僅供學術交流使用) All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>
